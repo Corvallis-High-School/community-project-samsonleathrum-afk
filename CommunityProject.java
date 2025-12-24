@@ -1,18 +1,56 @@
-public class CommunityProject {
-    // 1. write 3 instance variables for class: private type variableName;
+public class CommunityProject
+{
+    private boolean doYouUse; //Instance variable tracks whether a person drives on Circle Blvd.
+    private double dailyUse; //Instance variable tracks how many times per day a person uses this road.
+    private int roadQuality; //Instance variable tracks the user's rating of the road.
+    
+    public CommunityProject(boolean dyu, double du, int rq)
+    {
+        //Constructor gathers the user's response from the main method.
+    doYouUse = dyu; 
+    dailyUse = du;
+    roadQuality = rq;
+ 
+    }
+    public void print() //This method prints the instance variables. This could represent the user's original information or their altered response, depending on where their main method calls the print statement.
+    {
+        System.out.println("Do you use Circle Blvd? "+doYouUse+"\n"+"How many times a day on average? "+dailyUse+"\n"+"Rate the road quality: " + roadQuality);
+    }
 
-    // 2. Add a constructor with 3 parameters to set all of the instance variables to the given parameters.
-
-    // 3. Write a print() method that uses System.out.println to print out all the instance variables.
-
-    // 4. Create accessor (get) methods for each of the instance variables.
-
-    // 5. Create mutator (set) methods for each of the instance variables.
-
-    // 6. Create a toString() method that returns all the information in the instance variables.
-
-    // 7. Write an additional method for your class that takes a parameter. For example, there could be a print method with arguments that indicate how you want to print out the information, e.g. print(format) could print the data according to an argument that is "plain" or "table" where the data is printed in a table drawn with dashes (-) and lines (|).
-
-    // 8. Write a main method that constructs at least 2 objects of your class using the constructor and then calls all of the methods that you created above to test them.
-
+    public boolean getdoYouUse() //getter returns whether they use the road.
+    {
+       return doYouUse;
+    }
+    public double getdailyUse() //getter returns how many times they use the road.
+    {
+       return dailyUse;
+    }
+    public int getRoadQuality() //getter returns the user's rating.
+    {
+      return roadQuality;
+    }
+    public void setNewDaily(double nd) //setter alters the dailyUse variable for one object.
+    {
+       dailyUse = nd;
+    }
+    public void setNewUsage(boolean U) //setter alters the doYouUse variable for one object.
+    {
+       doYouUse = U;
+    }
+    public void setNewRoadQuality(int Q) //setter alters the roadQuality variable for one object.
+    {
+       roadQuality = Q;
+    }
+    public String toString() //toString method returns a string that describes all of the user's information.
+    {
+       return "Do you use Circle? "+doYouUse+"\n"+"How many times do you use Circle daily? " + dailyUse + "\n"+"What is the road quality? " + roadQuality;
+    }
+    public void findFrequentUser(boolean f) //This method finds if the user believes they are a frequent user.
+    {
+        if (f==true)
+            System.out.print("Frequent user!");
+        else
+            System.out.print("Not frequent user.");
+        
+    }
 }

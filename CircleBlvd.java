@@ -1,10 +1,10 @@
-public class CommunityProject
+public class CircleBlvd
 {
     private boolean doYouUse; //Instance variable tracks whether a person drives on Circle Blvd.
     private double dailyUse; //Instance variable tracks how many times per day a person uses this road.
     private int roadQuality; //Instance variable tracks the user's rating of the road.
     
-    public CommunityProject(boolean dyu, double du, int rq)
+    public CircleBlvd(boolean dyu, double du, int rq)
     {
         //Constructor gathers the user's response from the main method.
     doYouUse = dyu; 

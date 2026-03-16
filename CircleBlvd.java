@@ -14,7 +14,7 @@ public class CircleBlvd
     }
     public void print() //This method prints the instance variables. This could represent the user's original information or their altered response, depending on where their main method calls the print statement.
     {
-        System.out.println("Do you use Circle Blvd? "+doYouUse+"\n"+"How many times a day on average? "+dailyUse+"\n"+"Rate the road quality: " + roadQuality);
+        System.out.println(""+toString());
     }
 
     public boolean getdoYouUse() //getter returns whether they use the road.

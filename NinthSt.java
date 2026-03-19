@@ -4,7 +4,6 @@ public NinthSt(boolean dyu, double du, int rq, boolean s)
 {
 super(dyu, du, rq);
 sign = s;
-
 }
 public NinthSt()
 {
@@ -27,19 +26,15 @@ public void setPetition(boolean s)
         sign = false;
 }
 
-public void setNewRoadQuality(int qual)
-{
-    rq = qual;
-    if(rq>5)
-         rq = 5;
-      else if(rq<0)
-         rq = 0;
-}
+public void setNewRoadQuality(int Q) //setter alters the roadQuality variable for one object.
+    {
+      rq = Q;
+    }
 
 public String toString()
 {
     if(dyu==true)
-        return "Daily use of Ninth St "+du+ ". Road quality rating: "+rq+". Signed petition? "+sign;
+        return "Daily use of Ninth St "+getdailyUse()+ ". Road quality rating: "+getRoadQuality()+". Signed petition? "+sign;
     return "Not a user";
 }
 

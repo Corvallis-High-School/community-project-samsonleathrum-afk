@@ -10,10 +10,20 @@ public class CircleBlvd
     dyu = doYouUse; 
     du = dailyUse;
     rq = roadQuality;
+    checkRq();
     }
+
+    public void checkRq()
+    {
+      if(rq>5)
+       rq = 5;
+      else if(rq<0)
+         rq = 0;
+    }
+
     public CircleBlvd()
     {
-      dyu = true;
+      dyu = false;
     }
     public void print() //This method prints the instance variables. This could represent the user's original information or their altered response, depending on where their main method calls the print statement.
     {
@@ -42,22 +52,20 @@ public class CircleBlvd
     }
     public void setNewRoadQuality(int Q) //setter alters the roadQuality variable for one object.
     {
-       rq = Q;
+      rq = Q;
     }
     public String toString() //toString method returns a string that describes all of the user's information.
     {
-      if(rq>5)
-         rq = 5;
-      else if(rq<0)
-         rq = 0;
-       return "Do you use Circle? "+dyu+"\n"+"How many times do you use Circle daily? " + du + "\n"+"What is the road quality? " + rq;
+      if(dyu==true)
+       return "Do you use Circle Blvd? " +getdoYouUse()+ ". Daily use of Circle Blvd "+getdailyUse()+ ". Road quality rating: "+getRoadQuality();
+    return "Not a user";
     }
     public void findFrequentUser(boolean f) //This method finds if the user believes they are a frequent user.
     {
         if (f==true)
-            System.out.print("Frequent user!");
+            System.out.println("Frequent user!");
         else
-            System.out.print("Not frequent user.");
+            System.out.println("Not frequent user.");
         
     }
 }

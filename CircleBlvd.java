@@ -1,16 +1,19 @@
 public class CircleBlvd
 {
-    private boolean doYouUse; //Instance variable tracks whether a person drives on Circle Blvd.
-    private double dailyUse; //Instance variable tracks how many times per day a person uses this road.
-    private int roadQuality; //Instance variable tracks the user's rating of the road.
+    public boolean dyu; //Instance variable tracks whether a person drives on Circle Blvd. dyu = do You Use.
+    public double du; //Instance variable tracks how many times per day a person uses this road. //du = daily use.
+    public int rq; //Instance variable tracks the user's rating of the road. rq = Road quality.
     
-    public CircleBlvd(boolean dyu, double du, int rq)
+    public CircleBlvd(boolean doYouUse, double dailyUse, int roadQuality)
     {
         //Constructor gathers the user's response from the main method.
-    doYouUse = dyu; 
-    dailyUse = du;
-    roadQuality = rq;
- 
+    dyu = doYouUse; 
+    du = dailyUse;
+    rq = roadQuality;
+    }
+    public CircleBlvd()
+    {
+      dyu = true;
     }
     public void print() //This method prints the instance variables. This could represent the user's original information or their altered response, depending on where their main method calls the print statement.
     {
@@ -19,31 +22,35 @@ public class CircleBlvd
 
     public boolean getdoYouUse() //getter returns whether they use the road.
     {
-       return doYouUse;
+       return dyu;
     }
     public double getdailyUse() //getter returns how many times they use the road.
     {
-       return dailyUse;
+       return du;
     }
     public int getRoadQuality() //getter returns the user's rating.
     {
-      return roadQuality;
+      return rq;
     }
     public void setNewDaily(double nd) //setter alters the dailyUse variable for one object.
     {
-       dailyUse = nd;
+       du = nd;
     }
     public void setNewUsage(boolean U) //setter alters the doYouUse variable for one object.
     {
-       doYouUse = U;
+       dyu = U;
     }
     public void setNewRoadQuality(int Q) //setter alters the roadQuality variable for one object.
     {
-       roadQuality = Q;
+       rq = Q;
     }
     public String toString() //toString method returns a string that describes all of the user's information.
     {
-       return "Do you use Circle? "+doYouUse+"\n"+"How many times do you use Circle daily? " + dailyUse + "\n"+"What is the road quality? " + roadQuality;
+      if(rq>5)
+         rq = 5;
+      else if(rq<0)
+         rq = 0;
+       return "Do you use Circle? "+dyu+"\n"+"How many times do you use Circle daily? " + du + "\n"+"What is the road quality? " + rq;
     }
     public void findFrequentUser(boolean f) //This method finds if the user believes they are a frequent user.
     {
